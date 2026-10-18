@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Cinematic - Capture Your Precious Moments</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 460px;
+            background: radial-gradient(circle at top right, #c41515 0%, #750303 45%, #180101 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(220, 20, 20, 0.35);
+            border: 2px solid rgba(255, 60, 60, 0.3);
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            padding: 25px 20px 10px;
+            text-align: center;
+        }
+
+        .logo-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 8px 22px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .logo-badge h2 {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .logo-badge span {
+            color: #ff3b30;
+        }
+
+        .title-section h1 {
+            font-size: 36px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffcccc;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .subtitle span {
+            color: #ffd700;
+        }
+
+        /* Services List */
+        .services-section {
+            padding: 15px 25px;
+        }
+
+        .services-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .services-list li {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 9px 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            border-left: 4px solid #ff3b30;
+            transition: transform 0.2s ease;
+        }
+
+        .services-list li:hover {
+            transform: translateX(5px);
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .services-list li i {
+            color: #ff3b30;
+            margin-right: 12px;
+            font-size: 13px;
+        }
+
+        /* Price Tag */
+        .price-badge {
+            background: #ffffff;
+            color: #c41515;
+            font-weight: 800;
+            font-size: 17px;
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin: 10px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 10px 25px 20px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        /* Book Now (WhatsApp) */
+        .btn-book {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #ffffff;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Call Button */
+        .btn-call {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            color: #111111;
+        }
+
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Instagram Button */
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+        }
+
+        .btn-insta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            padding: 16px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .footer p span {
+            color: #ff3b30;
+        }
+
+        .rd-design {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-badge">
+                <h2><span>AP</span> CINEMATIC</h2>
+            </div>
+            <div class="title-section">
+                <h1>CINEMATIC</h1>
+                <p class="subtitle">Capture Your Precious Moment <span>With Us</span></p>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="services-section">
+            <ul class="services-list">
+                <li><i class="fa-solid fa-play"></i> PARTY SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> FESTIVAL SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> SOLO SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> ENGAGEMENT SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> COUPLE SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> CAR / BIKE SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> SHOP OPENING SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> POLITICAL SHOOT</li>
+                <li><i class="fa-solid fa-play"></i> BIRTHDAY SHOOT</li>
+            </ul>
+        </div>
+
+        <!-- Price -->
+        <div style="text-align: center;">
+            <div class="price-badge">
+                PRICE ₹150*
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="action-buttons">
+            <!-- Book Now (WhatsApp direct link) -->
+            <a href="https://wa.me/918623851517?text=Hello%20AP%20Cinematic%2C%20mujhe%20shoot%20book%20karna%20hai" class="btn btn-book" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+                <span>BOOK NOW</span>
+            </a>
+
+            <!-- Call Directly -->
+            <a href="tel:8623851517" class="btn btn-call">
+                <i class="fa-solid fa-phone fa-lg"></i>
+                <span>CALL: 8623851517</span>
+            </a>
+
+            <!-- Instagram Link with ID -->
+            <a href="https://instagram.com/mr_arshad_90__" class="btn btn-insta" target="_blank">
+                <i class="fa-brands fa-instagram fa-xl"></i>
+                <span>@mr_arshad_90__</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>BOOKING <span>OPEN!</span></p>
+            <div class="rd-design">RD DESIGN: 8767770972</div>
+        </div>
+    </div>
+
+</body>
+</html>
